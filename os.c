@@ -48,6 +48,22 @@ int main() {
       check = input_of_maxNeeds(Max_need_of_Processes, P, R);
   }
   printf("\n");
+printf("Condition 2 Satisfied. Summation is : %d\n\n", check);
+  int allot[P]; // How Many Resources are Already Allocated to the Process
+  for(int i = 0 ;  i < P; i++) {
+      if(Max_need_of_Processes[i]) {
+          allot[i] = Max_need_of_Processes[i] / 2;
+      } else {
+          allot[i] = 0;
+      }
+  }
+  int totalAlloted = 0;
+  for(int i = 0  ; i < P; i++) {
+      printf("Already Alloted Resources to the Process P%d are : %d\n", i + 1, allot[i]);
+      totalAlloted += allot[i];
+  }
 
-  int needOfResources[P][R];
+  isSafe(P, R, R - totalAlloted, Max_need_of_Processes, allot);
+  
+  return 0;
 }
