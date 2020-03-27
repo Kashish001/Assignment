@@ -119,7 +119,6 @@ int main() {
   }
 
   printf("\nTotal Available Resorces After Allocation of Resources : %d\n", R - totalAlloted_resources);
-  isSafe(P, R, R - totalAlloted_resources, Max_need_of_Processes, allot); // Calling function isSafe to Check Whether System is in safe state or not
-
+  isSafe(P, R, R - totalAlloted_resources, Max_need_of_Processes, allot); // Calling function isSafe to Check Whether System is in safe state or not, if it is then Provide Safe sequence else exit.
   return 0;
 }
