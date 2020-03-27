@@ -39,7 +39,7 @@ int input_of_maxNeeds(int maxNeeds[], int P, int R) {
 void remNeed(int need[], int P, int Max_need[], int allocated[]) {
     for(int i = 0 ;  i < P; i++) {
         need[i] = Max_need[i] - allocated[i];
-        printf("\nRemaing Need of Resources to Process P%d are : %d", i+1, need[i]);
+        printf("\nRemaining Need of Resources to Process P%d are : %d", i+1, need[i]);
     }
     printf("\n");
 }
@@ -114,11 +114,11 @@ int main() {
   }
   int totalAlloted_resources = 0;
   for(int i = 0  ; i < P; i++) {
-      printf("Already Alloted Resources to the Process P%d are : %d\n", i + 1, allot[i]);
+      printf("Already Allocated Resources to the Process P%d are : %d\n", i + 1, allot[i]);
       totalAlloted_resources += allot[i];
   }
 
-  printf("\nTotal Available Resorces After Allocation of Resources : %d\n", R - totalAlloted_resources);
+  printf("\nTotal Available Resources After Allocation of Resources : %d\n", R - totalAlloted_resources);
   isSafe(P, R, R - totalAlloted_resources, Max_need_of_Processes, allot); // Calling function isSafe to Check Whether System is in safe state or not, if it is then Provide Safe sequence else exit.
   return 0;
 }
