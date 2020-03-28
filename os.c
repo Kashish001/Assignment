@@ -24,7 +24,7 @@ int input_of_maxNeeds(int maxNeeds[], int P, int R) {
     for(int i = 0 ;  i < P; i++) {
     printf("Enter Max Number of Resources Need for Process P%d : ", i + 1);
     scanf("%d", &maxNeeds[i]);
-    if(maxNeeds[i] > R) {
+    if(maxNeeds[i] > R || maxNeeds[i] < 1) {
         return -1;
     }
     totalCount += maxNeeds[i];
